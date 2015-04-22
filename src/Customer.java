@@ -1,7 +1,3 @@
-
-import java.lang.*;
-import java.util.*;
-
 class Customer {
     private String name;
     private Vector rentals = new Vector();
@@ -32,13 +28,13 @@ class Customer {
 
         //add footer lines
         result += "Amount owed is " + String.valueOf(this.getTotalCharge()) + "\n";
-        result += "You earned " + String.valueOf(this.getFrequentRenterPoints()) + " frequent renter points";
+        result += "You earned " + String.valueOf(this.getTotalFrequentRenterPoints()) + " frequent renter points";
         this.getTotalCharge();
 
         return result;
     }
 
-    private int getFrequentRenterPoints() {
+    private int getTotalFrequentRenterPoints() {
         int result = 0;
         Enumeration rentals = this.rentals.elements();
         while (rentals.hasMoreElements()) {
