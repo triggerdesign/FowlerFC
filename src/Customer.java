@@ -51,6 +51,7 @@ class Customer {
             result += each.getCharge();
         }
         return result;
+        //test 2
 
     }
 
