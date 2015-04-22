@@ -4,17 +4,26 @@ public class Movie {
     public static final int NEW_RELEASE = 1;
     private String title;
     private int priceCode;
+
     public Movie(String newtitle, int newpriceCode) {
         title = newtitle;
         priceCode = newpriceCode;
     }
+
     public int getPriceCode() {
         return priceCode;
     }
+
+    /**
+     * @param arg
+     */
     public void setPriceCode(int arg) {
         priceCode = arg;
     }
-    public String getTitle (){
+
+    public String getTitle() {
         return title;
-    };
+    }
+
+    ;
 }
