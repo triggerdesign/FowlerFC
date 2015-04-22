@@ -1,7 +1,3 @@
-
-import java.lang.*;
-import java.util.*;
-
 class Customer {
     private String name;
     private Vector rentals = new Vector();
@@ -32,13 +28,30 @@ class Customer {
 
         //add footer lines
         result += "Amount owed is " + String.valueOf(this.getTotalCharge()) + "\n";
-        result += "You earned " + String.valueOf(this.getFrequentRenterPoints()) + " frequent renter points";
+        result += "You earned " + String.valueOf(this.getTotalFrequentRenterPoints()) + " frequent renter points";
         this.getTotalCharge();
 
         return result;
     }
 
-    private int getFrequentRenterPoints() {
+    public String htmlStatement(){
+        Enumeration rentals = rentals.elements();
+        String result = "<h1>Rentals for<em>" + getName() + "</em></h1><p>\n";
+
+        while(rentals.hasMoreElements()){
+            Rental each = (Rental)rentals.nextElement();
+            //show figures for each rental
+            result += each.getMovie().getTitle() + ": " + String.valueof(each.getCharge()) + "<br>\n";
+        }
+
+        //add footer lines
+        result += "<p>You owe <em>" + String.valueof(getTotalCharge()) + "</em><p>\n";
+        result += "On this rental you earned <em>" + String.valueOf(getTotalFrequentRenterPoints()) + "</em> frequent renter points<p>";
+
+        return result;
+    }
+
+    private int getTotalFrequentRenterPoints() {
         int result = 0;
         Enumeration rentals = this.rentals.elements();
         while (rentals.hasMoreElements()) {
