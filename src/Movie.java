@@ -14,6 +14,9 @@ public class Movie {
         return priceCode;
     }
 
+    /**
+     * @param arg
+     */
     public void setPriceCode(int arg) {
         priceCode = arg;
     }
