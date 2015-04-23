@@ -10,14 +10,7 @@ public class Movie {
 
         setPriceCode(priceCode);
     }
-
-    public int getPriceCode() {
-        return price.getPriceCode();
-    }
-
-    /**
-     * @param arg
-     */
+    
     public void setPriceCode(int arg) {
         switch(arg){
             case REGULAR:
