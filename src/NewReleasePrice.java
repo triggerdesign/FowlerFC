@@ -4,4 +4,8 @@ class NewReleasePrice extends Price {
         return Movie.NEW_RELEASE;
     }
 
+    double getCharge(int daysRented){
+        return daysRented * 3;
+    }
+
 }
