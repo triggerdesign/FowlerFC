@@ -10,7 +10,7 @@ public class Movie {
 
         setPriceCode(priceCode);
     }
-    
+
     public void setPriceCode(int arg) {
         switch(arg){
             case REGULAR:
